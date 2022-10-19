@@ -100,7 +100,7 @@ xgbc = XGBClassifier(
     eval_metric='auc',
     n_estimators=100,
     max_depth=6,
-    learning_rate=0.02
+    learning_rate=0.01
 )
 gbm = LGBMClassifier(
     objective='binary',
@@ -110,7 +110,7 @@ gbm = LGBMClassifier(
     colsample_bytree=0.8,
     subsample_freq=1,
     max_bin=255,
-    learning_rate=0.02,
+    learning_rate=0.01,
     n_estimators=100,
     metrics='auc'
 )
