@@ -87,8 +87,8 @@ train = train[:50000]
 label = label[:50000]
 
 gbc = GradientBoostingClassifier(
-    n_estimators=50,
-    learning_rate=0.01,
+    n_estimators=100,
+    learning_rate=0.025,
     max_depth=5
 )
 hgbc = HistGradientBoostingClassifier(
@@ -100,7 +100,7 @@ xgbc = XGBClassifier(
     eval_metric='auc',
     n_estimators=100,
     max_depth=6,
-    learning_rate=0.01
+    learning_rate=0.025
 )
 gbm = LGBMClassifier(
     objective='binary',
@@ -110,14 +110,14 @@ gbm = LGBMClassifier(
     colsample_bytree=0.8,
     subsample_freq=1,
     max_bin=255,
-    learning_rate=0.01,
+    learning_rate=0.025,
     n_estimators=100,
     metrics='auc'
 )
 cbc = CatBoostClassifier(
     iterations=210,
     depth=6,
-    learning_rate=0.01,
+    learning_rate=0.025,
     l2_leaf_reg=1,
     loss_function='Logloss',
     verbose=False
