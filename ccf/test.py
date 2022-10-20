@@ -87,7 +87,7 @@ train = train[:50000]
 label = label[:50000]
 
 gbc = GradientBoostingClassifier(
-    n_estimators=100,
+    n_estimators=50,
     learning_rate=0.025,
     max_depth=5
 )
