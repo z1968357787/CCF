@@ -18,7 +18,7 @@ warnings.filterwarnings('ignore')
 
 train_data = pd.read_csv('dataset/dataTrain.csv')
 test_data = pd.read_csv('dataset/dataB.csv')
-submission = pd.read_csv('dataset/submit_example_A.csv')
+submission = pd.read_csv('dataset/submit_example_B.csv')
 data_nolabel = pd.read_csv('dataset/dataNoLabel.csv')
 print(f'train_data.shape = {train_data.shape}')
 print(f'test_data.shape  = {test_data.shape}')
