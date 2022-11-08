@@ -17,7 +17,7 @@ from tqdm import tqdm
 warnings.filterwarnings('ignore')
 
 train_data = pd.read_csv('dataset/dataTrain.csv')
-test_data = pd.read_csv('dataset/dataA.csv')
+test_data = pd.read_csv('dataset/dataB.csv')
 submission = pd.read_csv('dataset/submit_example_A.csv')
 data_nolabel = pd.read_csv('dataset/dataNoLabel.csv')
 print(f'train_data.shape = {train_data.shape}')
@@ -88,7 +88,7 @@ label = label[:50000]
 
 gbc = GradientBoostingClassifier(
     n_estimators=50,
-    learning_rate=0.025,
+    learning_rate=0.13,
     max_depth=5
 )
 hgbc = HistGradientBoostingClassifier(
@@ -100,7 +100,7 @@ xgbc = XGBClassifier(
     eval_metric='auc',
     n_estimators=100,
     max_depth=6,
-    learning_rate=0.025
+    learning_rate=0.15
 )
 gbm = LGBMClassifier(
     objective='binary',
@@ -110,14 +110,14 @@ gbm = LGBMClassifier(
     colsample_bytree=0.8,
     subsample_freq=1,
     max_bin=255,
-    learning_rate=0.025,
+    learning_rate=0.09,
     n_estimators=100,
     metrics='auc'
 )
 cbc = CatBoostClassifier(
     iterations=210,
     depth=6,
-    learning_rate=0.025,
+    learning_rate=0.08,
     l2_leaf_reg=1,
     loss_function='Logloss',
     verbose=False
